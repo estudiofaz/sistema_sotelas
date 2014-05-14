@@ -1,0 +1,210 @@
+
+  <div class="slider-home-page">
+    <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/site/css/iview.css" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/site/css/skin 4/style.css" />
+    <link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/site/css/reveal.css">
+    <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery.reveal.js"></script>
+    
+    <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/site/js/raphael-min.js"></script> 
+    <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery.easing.js"></script> 
+    <script src="<?php echo $this->baseUrl(); ?>/layout/site/js/iview.js"></script> 
+     <script type="text/javascript"> 
+                  $(document).ready(function(){
+                	  
+                	    $('#janelaModal').reveal();
+        
+                      });          
+          </script>
+          
+          <script type="text/javascript">
+
+          $(document).ready(function(){
+        	  
+      	    jQuery("#fecharModal").click(function(){
+
+      	    	$('.reveal-modal').trigger('reveal:close');
+
+          	    });
+
+            });   
+
+          </script>
+    
+
+    <script>
+			$(document).ready(function(){
+				$('#iview').iView({
+	                pauseTime: 7000,
+					pauseOnHover: true,
+					directionNav: true,
+					directionNavHide: false,
+					controlNav: true,
+					controlNavNextPrev: false,
+					controlNavTooltip: false,
+					nextLabel: "Próximo",
+					previousLabel: "Anterior",
+					playLabel: "Jugada",
+					pauseLabel: "Pausa",
+					timer: "360Bar",
+					timerBg: "#EEE",
+					timerColor: "#000",
+					timerDiameter: 40,
+					timerPadding: 4,
+					timerStroke: 8,
+					timerPosition: "bottom-right"
+				});
+			});
+
+			<?php 
+			
+			$janelaModel = new Admin_Model_DbTable_Janela();
+			$where = $janelaModel->getAdapter()->quoteInto('idJanela = ?', 1);
+			$fotos = $janelaModel->select()->where($where);
+			
+			$select =  $janelaModel->getAdapter()->fetchRow($fotos);
+            ?>
+		</script>
+		
+		<div id="janelaModal" class="reveal-modal"> 
+              <h1><?php echo $select['titulo']?></h1> 
+              <p><?php echo $select['mensagem']?></p>
+               <a class="close-reveal-modal">×</a> 
+                      
+                <img alt="" style="width: 100%;" class="imgTranparente"  src="<?php echo $this->baseUrl();?>/upload/janela/<?php echo $select['nome']?>">
+                <div class="container" style="width: 100px; ;margin-top: 20px;">
+                    <a target="blank" id="fecharModal" href="<?php echo $this->baseUrl();?>/upload/pdf/arquivojanela.pdf">
+                        <img style="width: 70px; "  alt="" title="Download" src="<?php echo $this->baseUrl();?>/layout/site/img/pdficon.png">
+                    </a>
+                </div>
+          </div> 
+    <div id="iview">
+      
+      <?php foreach ($this->sliders as $slider): ?>
+      <div data-iview:image="<?php echo $this->baseUrl(); ?>/upload/sliders/<?php echo $slider['nomeArquivo']; ?>">
+        
+        <?php if (($slider['tituloSlider'] != null) || ($slider['descSlider'] != null)) { ?>
+            <div class="iview-caption caption1" data-x="100" data-y="150" data-transition="expandDown">
+              <h3>
+                <?php echo $slider['tituloSlider']; ?>
+              </h3>
+              <h5>
+                <?php echo $slider['descSlider']; ?> 
+              </h5>
+            </div>
+        <?php }?>    
+      </div>
+      <?php endforeach;?>
+      
+      
+    </div>
+  </div>
+<div class="background">  
+   <div class="divImgPosIslide">
+    <?php 
+    $imgcentralModel = new Admin_Model_DbTable_Imagemcentral();
+    $where = $imgcentralModel->getAdapter()->quoteInto('id = ?', 1);
+    $fotos = $imgcentralModel->select()->where($where);
+    $select =  $imgcentralModel->getAdapter()->fetchRow($fotos);
+    
+    ?>
+    <img alt="" style="width: 100%;" class="imgTranparente"  src="<?php echo $this->baseUrl();?>/upload/imagemcentral/<?php echo $select['nome']?>">
+    </div>
+  <section  id="columns" class="container_9 clearfix col1" > 
+    
+    
+    <!-- Center -->
+        
+            <article id="center_column" class=" grid_5 centroCarrusel" >
+        
+              
+            
+              
+              <div class="width-carousel">
+                <div class="title-box">
+                  <h3 class="title-carousel first-brd">Nossos Produtos</h3>
+                </div>
+                
+                <!-- bxSlider Javascript file --> 
+                <script src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery.bxslider.min.js"></script> 
+                <!-- bxSlider CSS file -->
+                <link href="<?php echo $this->baseUrl(); ?>/layout/site/css/jquery.bxslider.css" rel="stylesheet" />
+                <script>
+        $(document).ready(function(){
+          $('.bxslider').bxSlider({ 
+            slideWidth: 270,
+            minSlides: 4,
+            maxSlides: 4,
+            slideMargin: 28
+          });
+        });
+        </script>
+                <ul class="products-grid first odd bxslider">
+                <?php $numero = 0?>
+                <?php foreach ($this->categorias as $key=>$cat): ?>
+                
+                    <?php if(($key%2==0)) :?>
+                        <div>
+                    <?php endif; ?>
+                  <?php //var_dump($cat, $key); ?>
+                  
+                            <?php //for($n =0;$n<2;$n++):?>
+                              
+                                  <li class="item first fadeIn animated">
+                                   
+                                    <a href="<?php echo $this->baseUrl(); ?>/produtos/view/id/<?php echo $cat['idCategoria']; ?>" class="fa-search-btn first-bg" >
+                                        Detalhar produto <i class="icon-search"></i>
+                                    </a>
+                                    
+                                    <br />
+                                    
+                                    <a href="<?php echo $this->baseUrl(); ?>/produtos/view/id/<?php echo $cat['idCategoria']; ?>" class="product-image" > 
+                                        <img style="width:249px; height: 180px;" src="<?php echo $this->baseUrl(); ?>/upload/categorias/<?php echo $cat['nomeArquivo']; ?>" alt="produtos">
+                                    </a>
+                                    
+                                    <h2 class="product-name"> 
+                                        <a title="Produto" href="<?php echo $this->baseUrl(); ?>/produtos/view/id/<?php echo $cat['idCategoria']; ?>">
+                                            <b style="text-transform: uppercase;">
+                                                <?php echo $cat['descCategoria']; ?>
+                                            </b>
+                                        </a> 
+                                    </h2>
+                                    <br />
+                                  </li>
+                                
+                               <?php //endfor;?>
+                     <?php if($key%2!=0) :?>      
+                  </div>
+                  <?php endif; ?>
+                  <?php $numero++?>
+                 <?php endforeach; ?>         
+                 
+                 
+                </ul>
+                
+                             
+                
+              </div>
+     
+              
+           
+  
+           
+              
+              
+              
+              
+            </article>
+         
+  </section>
+   <div class="divImgPosIslide" >
+        <?php 
+        $imgfinalModel = new Admin_Model_DbTable_Imagemfinal();
+        $where = $imgfinalModel->getAdapter()->quoteInto('id = ?', 1);
+        $fotos = $imgfinalModel->select()->where($where);
+        
+        $select =  $imgfinalModel->getAdapter()->fetchRow($fotos);
+        ?>
+        <img alt="" style="width: 100%;" class="imgTranparenteFinal"  src="<?php echo $this->baseurl();?>/upload/imagemfinal/<?php echo $select['nome']?>">
+    </div>
+</div>  

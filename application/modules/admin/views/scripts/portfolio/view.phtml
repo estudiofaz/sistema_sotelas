@@ -1,0 +1,126 @@
+
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/isotope.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/modernizr.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.slimscroll.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        
+        //Replaces data-rel attribute to rel.
+        //We use data-rel because of w3c validation issue
+        jQuery('a[data-rel]').each(function() {
+            jQuery(this).attr('rel', jQuery(this).data('rel'));
+        });
+        
+        jQuery("#medialist a").colorbox();
+        
+    });
+    jQuery(window).load(function(){
+        jQuery('#medialist').isotope({
+            itemSelector : 'li',
+            layoutMode : 'fitRows'
+        });
+        
+        // Media Filter
+        jQuery('#mediafilter a').click(function(){
+	    
+            var filter = (jQuery(this).attr('href') != 'all')? '.'+jQuery(this).attr('href') : '*';
+            jQuery('#medialist').isotope({ filter: filter });
+	    
+            jQuery('#mediafilter li').removeClass('current');
+            jQuery(this).parent().addClass('current');
+	    
+            return false;
+        });
+    });
+</script>
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-tags"></span></div>
+            <div class="pagetitle">
+                <h5>PORTFOLIO</h5>
+                <h1><?php echo $this->categoria['descCategoria']; ?></h1>
+            </div>
+        </div><!--pageheader-->
+        <?php 
+        echo $this->alert;
+        ?>
+        <div class="maincontent">
+            <div class="maincontentinner">
+            
+                
+                <a href="<?php echo $this->baseUrl(); ?>/admin/portfolio/add/id/<?php echo $this->categoria['idCategoria']; ?>" class="btn btn-inverse alertinverse" >
+                	Adicionar Produto
+                </a>
+                
+                <br /><br />
+                
+                <div class="peoplelist">
+                
+                <?php 
+                $k = 1;
+                foreach ($this->produtos as $produto): 
+                
+	                if ($k == 1){
+	                	echo "<div class='row-fluid'>";
+	                	$endDiv = null;
+	                	$k = 2;
+	                }elseif ($k == 2){
+	                	$endDiv = '</div>';
+	                	$k = 1;
+	                }else{
+	                	$k++;
+	                	$endDiv = null;
+	                }
+				?>
+                        <div class="span6">                        
+                            <div class="peoplewrapper">
+                            
+                    
+                        	<span id="medialist" >
+                            	<a href="<?php echo $this->baseUrl(); ?>/admin/produtos/del/id/<?php echo $produto['idProduto']; ?>/cat/<?php echo $this->categoria['idCategoria']; ?>" >
+                            		<button class="btn trash"><span class="icon-trash"> </span></button>
+                            	</a>
+                            </span>
+                            <?php /*?>
+                            	<a href="<?php echo $this->baseUrl(); ?>/admin/produtos/edit/id/<?php echo $produto['idProduto']; ?>/cat/<?php echo $this->categoria['idCategoria']; ?>" >
+                            		<button class="btn "><span class="icon-pencil"> </span></button>
+                            	</a>
+                            */ ?>
+                            
+                                <div class="peopleinfo">
+                                
+                                    <ul>
+                                    	<li>
+                                    		<img style="width:280px; height:200px;" alt="" src="<?php echo $this->baseUrl(); ?>/upload/produtos/<?php echo $produto['nomeArquivo']; ?>">
+                                    	</li>
+                                    
+                                    	<li>
+                                    		<h4><?php echo $produto['tituloProduto']; ?></h4>
+                                    	</li>
+                                        
+                                    </ul>
+                                </div><!-- peopleinfo -->
+                            </div><!-- peoplewrapper -->
+                        </div><!-- span6 -->
+                    
+                <?php                	
+                	echo $endDiv.'<!--END DIV -->';
+                endforeach; 
+                ?>
+                
+                </div><!--peoplelist-->
+                
+            </div><!--maincontentinner-->
+        </div><!--maincontent-->
+        
+        

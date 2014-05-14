@@ -1,0 +1,29 @@
+
+  <div class="category-full-image"> 
+    <ul class="category-slider">
+      <li> <img src="<?php echo $this->baseUrl(); ?>/layout/site/media/page-title-bg.jpg" ></li>
+    </ul>
+  </div>
+  
+  <div class="container_9 title-container">
+    <div class="page-title first-bg"> Parceiros </div>
+  </div>
+  
+  <section  id="columns" class="container_9 clearfix "> 
+    <!-- Center -->
+    <article id="center_column" class=" grid_12">
+        <div class="parceiros"> 
+        <?php foreach ($this->parceiros as $parceiro): ?>
+          
+            <img style="width:200px; height:100px;" src="<?php echo $this->baseUrl(); ?>/upload/parceiros/<?php echo $parceiro['nomeArquivo']; ?>" >
+          
+        <?php endforeach; ?>
+        
+        </div>
+          
+        <br /><br />
+        <br /><br />
+    </article>
+    
+  </section>
+  

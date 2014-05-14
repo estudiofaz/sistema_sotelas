@@ -1,0 +1,116 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/isotope.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/modernizr.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.slimscroll.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+        
+                
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        
+        //Replaces data-rel attribute to rel.
+        //We use data-rel because of w3c validation issue
+        jQuery('a[data-rel]').each(function() {
+            jQuery(this).attr('rel', jQuery(this).data('rel'));
+        });
+        
+        jQuery("#medialist a").colorbox();
+        
+    });
+    jQuery(window).load(function(){
+        jQuery('#medialist').isotope({
+            itemSelector : 'li',
+            layoutMode : 'fitRows'
+        });
+        
+        // Media Filter
+        jQuery('#mediafilter a').click(function(){
+	    
+            var filter = (jQuery(this).attr('href') != 'all')? '.'+jQuery(this).attr('href') : '*';
+            jQuery('#medialist').isotope({ filter: filter });
+	    
+            jQuery('#mediafilter li').removeClass('current');
+            jQuery(this).parent().addClass('current');
+	    
+            return false;
+        });
+    });
+</script>
+        
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-laptop"></span></div>
+            <div class="pagetitle">
+                <h5>HOME</h5>
+                <h1>Parceiros</h1>
+            </div>
+        </div><!--pageheader-->
+        
+        <?php echo $this->alert; ?>
+        
+        <div class="maincontent">
+            <div class="maincontentinner">
+                <div class="mediamgr">
+            	<div class="mediamgr_left">
+                	<div class="mediamgr_head">
+                	
+                    	<ul class="mediamgr_menu">                      
+                            
+                            <li class="marginleft15 ">
+                            <form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'index'));?>" method="POST" enctype="multipart/form-data">
+								    <label>Enviar imagem</label>
+								    <div class="fileupload fileupload-new" data-provides="fileupload">
+									<div class="input-append">
+									<div class="uneditable-input span3">
+									    <i class="iconfa-file fileupload-exists"></i>
+									    <span class="fileupload-preview"></span>
+									</div>
+	
+									<span class="btn btn-file"><span class="fileupload-new">Selecionar arquivo</span>
+									<span class="fileupload-exists">Alterar</span>
+									<input type="file" name="arquivo" /></span>
+									<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remover</a>
+									</div>
+								    </div>
+								    
+								    <button class="btn btn-primary" name="up" value="Enviar Arquivo" type="submit">Enviar Arquivo</button>
+							</form>
+                            </li>
+                        </ul>
+                        
+                        <span class="clearall"></span>
+                    </div><!--mediamgr_head-->
+                    
+                    <div class="mediamgr_content">
+						
+                        
+                        <ul id="medialist" class="listfile">
+                        	<?php foreach ($this->parceiros as $parceiro): ?>
+                        	<li class="">
+                              	<img style="width:100px; height:50px;" src="<?php echo $this->baseUrl(); ?>/upload/parceiros/<?php echo $parceiro['nomeArquivo']; ?>" alt="" />
+                            		<br />
+                            		<a class="btn" href="<?php echo $this->baseUrl().'/admin/parceiros/del/id/'.$parceiro['idParceiro']; ?>" class="icon-trash">Excluir</a>
+                            		
+                            <?php endforeach; ?>
+                           	</li>
+                        </ul>
+                        
+                        <br class="clearall" />
+                        
+                    </div><!--mediamgr_content-->
+                    
+                </div><!--mediamgr_left -->
+                
+                <br class="clearall" />
+            </div><!--mediamgr-->
+            
+
+</div>
+</div>

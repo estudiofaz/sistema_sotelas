@@ -1,0 +1,82 @@
+
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/tinymce2/js/tinymce/tinymce.min.js"></script>
+
+
+<script>
+tinymce.init({
+    selector: "textarea#elm1",
+    theme: "modern",
+
+    plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+         "save table contextmenu directionality emoticons template paste textcolor"
+   ],
+   content_css: "css/content.css",
+   toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image |  preview  fullpage | forecolor backcolor ", 
+   menu: {  
+   }
+
+ }); 
+</script>
+
+        
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-th-list"></span></div>
+            <div class="pagetitle">
+                <h5>SISTEMA</h5>
+                <h1>Perfil</h1>
+            </div>
+        </div><!--pageheader-->
+        <?php 
+        	echo $this->alert;
+		?>        
+        <div class="maincontent">
+            <div class="maincontentinner">
+            
+
+            <form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'access'));?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Editar dados de acesso</h4>
+                <div class="widgetcontent nopadding">
+					
+
+					<p>
+						<label>Nome de Usuário</label>
+						<span class="field">
+							<input type="text" name="usuarioLogin" id="firstname2" class="input-xxlarge" value="<?php echo $this->cliente['usuarioLogin']; ?>" />
+						</span>
+					</p>					
+	
+					<p>
+						<label>Nova senha</label>
+						<span class="field">
+							<input type="password" name="novaSenha1" id="firstname2" class="input-xxlarge" />
+						</span>
+					</p>
+					
+					<p>
+						<label>Confirmação da nova senha</label>
+						<span class="field">
+							<input type="password" name="novaSenha2" id="firstname2" class="input-xxlarge" />
+						</span>
+					</p>
+					
+					<p>
+						<i>Para não alterar a senha, apenas deixe os campos de "Nova senha" em branco.</i>
+					</p>
+					
+                	<p class="stdformbutton">
+                		<button class="btn btn-primary" name="up" value="Confirmar" type="submit">Confirmar</button>
+                	</p>
+
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+                    
+			</form>
+                    

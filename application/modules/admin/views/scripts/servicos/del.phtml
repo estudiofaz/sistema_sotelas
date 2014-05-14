@@ -1,0 +1,13 @@
+
+<img style="width:300px; height:315px;" src="<?php echo $this->baseUrl(); ?>/upload/servicos/<?php echo $this->servico['nomeArquivo']; ?>" alt="" />
+	<h3><?php echo $this->servico['tituloServico']; ?></h3>
+	
+	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'del'));?>" method="POST" enctype="multipart/form-data">
+	
+		<input type="hidden" name="nomeArquivo" value="<?php echo $this->servico['nomeArquivo']; ?>" />                        
+		<p class="stdformbutton">
+			<button class="btn btn-primary" name="up" value="Excluir" type="submit">Excluir</button>
+			
+			<button class="btn " name="up" value="Cancelar" type="submit">Cancelar</button>
+		</p>
+	</form>

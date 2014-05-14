@@ -1,0 +1,260 @@
+ @import url("mobile-nav.css");
+ @media only screen and (max-width: 1000px) {
+#right_column, #left_column {
+	width: 100% !important;
+}
+}
+ @media only screen and (max-width: 1000px) {
+body {
+	-webkit-text-size-adjust: none;
+}
+BUTTON, INPUT[type="button"], INPUT[type="submit"], INPUT[type="reset"] {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	-ms-appearance: button;
+	-o-appearance: button;
+	appearance: button;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+}
+#center_column {
+	width:100% !important;
+}
+.footer-info img {
+	width:100%;
+	height:auto;
+}
+html .products-grid {
+	width:100%;
+}
+html .products-grid li.item {
+	width: 30%;
+}
+.promo-home li {
+	width: 26% !important;
+}
+.promo-home li img {
+	width: 100% !important;
+}
+.category-list li {
+	margin-right: 2%;
+	width: 32% !important;
+}
+.category-list li img {
+	width: 100% !important;
+}
+#pb-right-column {
+	float: left;
+	width: 49%;
+}
+#pb-left-column {
+	float: right;
+	margin-left: 0;
+	width: 49% !important;
+}
+#pb-right-column img {
+	width:100%;
+	height:auto;
+}
+}
+ @media only screen and (max-width: 800px) {
+body {
+	-webkit-text-size-adjust: none;
+	min-width:450px;
+}
+BUTTON, INPUT[type="button"], INPUT[type="submit"], INPUT[type="reset"] {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	-ms-appearance: button;
+	-o-appearance: button;
+	appearance: button;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+}
+html #searchbox {
+ clear: both;
+    display: block;
+    float: none;
+    margin: 20px auto 10px;
+    max-width: 215px;
+    position: relative;
+    z-index: 888;
+}
+
+
+.promo-home li {
+  margin: 0 1% 1% 5% !important;
+    min-height: 51px;
+    padding: 4%;
+    text-align: center;
+    width: 18% !important;
+}
+.promo-home li img {
+	width: 100% !important;
+}
+.category-list li {
+    margin-left: 1%;
+    margin-right: 1%;
+    text-align: center;
+    width: 31% !important;
+}
+.category-list li img {
+	width: 100% !important;
+}
+#center_column {
+	width:100% !important;
+}
+html .products-grid li.item {
+	width: 100% !important;
+}
+
+
+.width-carousel   .products-grid li.item {
+	width: auto !important;
+}
+
+.products-list .product-image {
+	display: block;
+	float: none;
+	height: auto;
+	margin:  0;
+	text-align: center;
+	width: 100%;
+}
+.products-list .product-image img {
+	width:100%;
+	height:auto;
+}
+.products-list .product-shop {
+	padding-left:20px;
+}
+.products-list .product-shop {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding-bottom: 40px;
+	position: relative;
+}
+.products-list li.item .btn-set {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+.products-list .desc {
+	margin: 0 0 15px;
+}
+
+
+table,thead,tfoot,tbody{
+	display:block;
+}
+
+
+
+.cart tfoot,.cart thead {
+	display:none;
+
+}
+
+.input-qty-box .range,.input-qty-box .input .range li{
+	float:none !important;
+	 margin: 0 auto;
+    max-width: 130px;
+    padding: 0 0 0 35px;
+}
+
+.data-table tbody td dt,.cart-table .product-name{
+	text-align:center;
+}
+
+table th {
+	padding: 5px !important;
+	text-align: center !important;
+	vertical-align: middle !important;
+	display: none;
+	width: 100% !important;
+}
+table td {
+  border-left: 0 none !important;
+    border-right: 0 none !important;
+    display: block;
+    padding: 5px !important;
+    text-align: center !important;
+    vertical-align: middle !important;
+    width: auto !important;
+}
+table tr {
+	display: block;
+}
+
+
+
+.col2-set .col-2,.col2-set .col-1,.col2-set {
+    float: none;
+    width: 100%;
+}
+
+.cart .cart-collaterals .col2-set {
+    float: none;
+    width: 100%;
+}
+
+.cart .totals {
+    float: none;
+    width: 100%;
+}
+
+
+
+#login-form label {
+    display: block;
+    float: none;
+    margin-left: 0;
+    text-align: left;
+    width: auto;
+}
+.form-list label.required em {
+    left: -8px;
+	right:auto !important;
+}
+
+
+
+.pagination ul {
+	float: none;
+	margin: 10px;
+}
+.pagination .item-total {
+	float: none;
+	font-size: 13px;
+	margin: 10px;
+}
+html .pagination {
+	display: inline-block;
+	margin: 0;
+	width: 100%;
+}
+#footer .block {
+  margin: 5% !important;
+    width: 90%;
+}
+html #pb-right-column, html #pb-left-column {
+	float: none;
+	width: 100% !important;
+}
+.i-tab li {
+	margin: 0 !important;
+	padding: 3%;
+	width: 94% !important;
+}
+
+
+.form-add-comment textarea {
+    width: 100% !important;
+}
+
+}

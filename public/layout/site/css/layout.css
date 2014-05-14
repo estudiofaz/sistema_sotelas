@@ -1,0 +1,152 @@
+@font-face
+{
+font-family: fontsotelas;
+src: url("../font/nexa.otf");
+}
+
+
+.divTop{
+	
+	height: 10px;
+	background-color: black;
+	
+}
+
+.divlogo{
+	
+	height:117px;
+	float: left;
+	margin-left: 13%;
+	margin-top: 3px;
+	margin-bottom: 30px;
+}
+
+.tamahoLogo{
+	
+	width: 55%;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.divTopo{
+	
+	
+	float: right;
+	margin-top: -150px;
+	margin-bottom: -4px;
+	margin-right: 8%;
+	
+}
+
+.tamahoTopo{
+	width: 100%;
+}
+
+
+.divMenu{
+	
+	height: 40px;
+	background-color: #1a5434;
+	
+}
+
+.divMenuInterno{
+	
+	width: 43%;
+	height: 40px !important;
+	
+	
+}
+
+.divImgPosIslide{
+	
+	
+}
+
+.imgTranparente{
+opacity:0.95;
+}
+
+.imgTranparenteFinal{
+opacity:0.95;
+}
+
+.active{
+	
+	background-color: #0c2517;
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+.centroCarrusel{
+	
+	background-color: white;
+	padding-left: 2%;
+	padding-right: 2%;
+	opacity:0.95;
+	
+}
+
+.evento{
+	
+	width: 45% !important;
+	height: 350px !important;
+}
+
+.background{
+	
+	background-image: url("../img/back6.png");
+}
+.rodape{
+	
+	background-color: rgb(32, 73, 30);
+}
+
+.divLogoRodape{
+
+	width: 155px;
+	margin-left: 85%;
+}
+.padding{
+	
+	padding: 27px 0 20px;
+}
+
+
+.links{
+	
+	float: left;
+	color: white;
+	height: 40px;
+	font-size: 26px;
+	margin-left: 3%;
+}
+
+.fontMenu{
+	
+	font-family: fontsotelas;
+	font-size: 21px;
+}
+
+
+.mensagem{
+	
+	
+	
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 30px;
+	font-family: bebas_neueregular;
+	text-align: center;
+}
+
+.fontMenuRodape{
+	
+	font-family: fontsotelas !important;
+}
+
+
+
+
+
+

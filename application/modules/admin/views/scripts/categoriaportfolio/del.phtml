@@ -1,0 +1,21 @@
+
+<h2>Tem certeza que deseja excluir esta Categoria?</h2>
+
+<br />
+<h4>IMPORTANTE:</h4>
+<h4>Ao excluir uma Categoria, está excluindo automaticamente todos os produtos vinculadas.</h4>
+<br />
+<img style="width:300px; height:215px;" src="<?php echo $this->baseUrl(); ?>/upload/categorias/<?php echo $this->categoria['nomeArquivo']; ?>" alt="" />
+
+<br /><br /><br />
+<?php 
+	echo '<h4>'.$this->categoria['descCategoria'].'</h4>';
+?>
+
+	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'del'));?>" method="POST" enctype="multipart/form-data">                        
+		<p class="stdformbutton">
+			<button class="btn btn-primary" name="up" value="Excluir" type="submit">Excluir</button>
+			<button class="btn " name="up" value="Cancelar" type="submit">Cancelar</button>
+		</p>
+	</form>
+

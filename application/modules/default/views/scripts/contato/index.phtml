@@ -1,0 +1,81 @@
+<div class="category-full-image"> 
+    <ul class="category-slider">
+      <li> <img src="<?php echo $this->baseUrl(); ?>/layout/site/media/page-title-bg.jpg" ></li>
+    </ul>
+  </div>
+
+  <div class="container_9 title-container">
+    <div class="page-title first-bg"> Fale Conosco </div>
+  </div>
+  <section  id="columns" class="container_9 clearfix col2-right"> 
+    
+    <!-- Center -->
+    <article id="center_column" class=" grid_5">
+
+    <p style="">
+    <?php /*?>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d491459.88085384585!2d-47.79764365!3d-15.775966799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1398292822906" width="100%" height="250" frameborder="0" style="border:0"></iframe>
+    */?>
+    <?php echo $this->contato['mapaContato']; ?>
+    </p>    
+    <form class="form-add-comment">
+            <h3> Fale conosco através do formulário de contato</h3>
+            <table >
+              <tr>
+                <td><ul>
+                    <li>
+                      <input type="text" placeholder="Nome" >
+                    </li>
+                    <li>
+                      <input type="text" placeholder="E-mail" >
+                    </li>
+                    <li>
+                      <input type="text" placeholder="Telefone" >
+                    </li>
+                  </ul></td>
+                <td><textarea></textarea></td>
+              </tr>
+            </table>
+            <div class="btn-set">
+              <button type="submit" class="button"><span><span>Enviar</span></span></button>
+            </div>
+          </form>
+          
+    </article>
+          
+    <aside id="right_column" class="column grid_2 omega">
+      
+      <div  class="block block-news">
+        <h4 class="title_block">Entre em Contato</h4>
+        <div class="block_content">
+          <ul >
+            <li>
+                <?php echo $this->contato['endContato']; ?>
+            </li>
+            <li>
+                <?php echo $this->contato['cidadeContato']; ?>
+            </li>
+            <li>
+                <?php echo $this->contato['telefone1Contato']; ?>
+            </li>
+            <li>
+                <?php echo $this->contato['telefone2Contato']; ?>
+            </li>
+
+            <li>
+                <?php echo $this->contato['telefone3Contato']; ?>
+            </li>
+            
+            <li>
+            
+            <li>
+                <?php echo $this->contato['emailContato']; ?>
+            </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+    </aside>
+          
+</section>

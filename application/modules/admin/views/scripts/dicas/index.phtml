@@ -1,0 +1,57 @@
+<?php
+    
+     
+    
+    $this->headScript()->prependFile('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js');
+	$this->headScript()->prependFile($this->baseUrl().'/layout/adm/ckeditor/ckeditor.js');
+	$this->headScript()->prependFile($this->baseUrl().'/layout/adm/ckeditor/adapters/jquery.js');
+      
+	echo $this->headScript();
+      
+	echo $this->SetupEditor( 'editor1' );
+	?>
+        
+
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-briefcase"></span></div>
+            <div class="pagetitle">
+                <h5>DICAS</h5>
+                <h1>Dicas</h1>
+            </div>
+        </div><!--pageheader-->
+           <?php if($this->salvar != null){?> 
+            <div class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">x</button>
+                
+                Suas alterações foram efetuadas com sucesso!
+            </div>   
+            <?php }?>  
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+            <form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'index'));?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Dicas</h4>
+                <div class="widgetcontent nopadding">
+                
+				<p>
+                <textarea rows="15" id="editor1" name="descEmpresa"><?php echo stripslashes($this->empresa['descEmpresa']);?></textarea>
+            	</p>
+                
+                <p class="stdformbutton">
+                	<button class="btn btn-primary" name="up" value="Salvar" type="submit">Salvar</button>
+                </p>
+
+
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+		</form>
+		
+		</div>
+	</div>
+                    
+                    
+      
+                    
+                    

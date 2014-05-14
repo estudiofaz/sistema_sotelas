@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<!--[if lt IE 8]>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+<!--[if IE 8 ]> <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]> <html class="ie9"> <![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript">
+location.replace("http://windows.microsoft.com/en-US/internet-explorer/products/ie/home");
+</script>
+<![endif]-->
+
+<html>
+<head>
+<title>Só telas</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0;" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" href="<?php echo $this->baseUrl(); ?>/layout/favicon.ico" type="image/x-icon"/>
+<link href="<?php echo $this->baseUrl(); ?>/layout/site/css/styles.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $this->baseUrl(); ?>/layout/site/css/custom-style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="<?php echo $this->baseUrl(); ?>/layout/site/css/layout.css" rel="stylesheet" type="text/css" media="all" />
+<script src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery-1.7.1.min.js"></script>
+<script src="<?php echo $this->baseUrl(); ?>/layout/site/js/modernizr.custom.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/site/css/prettyPhoto.css" />
+<script src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery.prettyPhoto.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+jQuery(document).ready(function() {
+
+$(".fa-search-btn").prettyPhoto();
+
+	
+});
+
+</script>
+</head>
+
+<body id="index" class=" ">
+<div id="page" class="clearfix">
+  <div class="divTop " >
+    
+  </div>
+  
+  <!-- Header -->
+  
+  
+  <header id="header" role="heading" class="third-bg" >
+  
+    <div class="header-content  ">
+         
+                
+         <?php 
+         $imgModel = new Admin_Model_DbTable_Imagem();
+         $where = $imgModel->getAdapter()->quoteInto('idImagem = ?', 4);
+         $fotos = $imgModel->select()->where($where);
+         
+         $select =  $imgModel->getAdapter()->fetchRow($fotos);
+         
+         ?>
+    
+    <img style="width: 100%;" src="<?php echo $this->baseUrl(); ?>/upload/telefone/<?php echo $select['nomeArquivo'] ?>">
+     
+    </div>
+     
+      
+    
+    
+    <script src="<?php echo $this->baseUrl(); ?>/layout/site/js/jquery.dlmenu.js"></script> 
+    <script>
+			$(function() {
+	 $( '#dl-menu' ).dlmenu();
+				
+	 $(".sf-menu li.item").hover(
+      function () {
+       
+	   $(this).children('a').addClass('hover');
+      },
+      function () {
+          $(this).children('a').removeClass('hover');
+      }
+     );
+	    });
+</script>
+    
+    <div id="" class="" style="display:none;">
+      <button class="dl-trigger">Menu</button>
+      <ul class="dl-menu">
+        
+        <li>
+            <a  href="<?php echo $this->baseUrl(); ?>/index">
+                Principal
+            </a>
+        </li>
+
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/empresa">
+                A Empresa
+            </a>
+        </li>
+        
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/produtos">
+                Produtos
+            </a>
+        </li>
+        
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/dicas">
+                Dicas
+            </a>
+        </li>
+        
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/parceiros">
+                Parceiros
+            </a>
+        </li>
+        
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/portfolio">
+                Portfolio
+            </a>
+        </li>
+        
+        <li>
+            <a href="<?php echo $this->baseUrl(); ?>/contato">
+                Fale Conosco
+            </a>
+        </li>
+        
+      </ul>
+    </div>
+  </header>
+  
+  <?php 
+  $controller = Zend_Controller_Front::getInstance();
+  $controlerName = $controller->getRequest()->getControllerName();
+  ?>
+  <div class="divMenu">
+           
+                <div class="divMenuInterno container">
+                   
+                    <div class="links<?php if($controlerName =='index'):echo ' active'; endif;?>">
+                        <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/index">Home</a>
+                    </div>
+                   
+                   
+                    <div class="links <?php if($controlerName =='empresa'):echo ' active'; endif;?>">
+                        <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/empresa">A Empresa</a>
+                    </div>
+                   
+                   
+                    <div class="links <?php if($controlerName =='produtos'):echo ' active'; endif;?>">
+                       <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/produtos">Serviços</a>
+                    </div>
+                     <div class="links <?php if($controlerName =='fotos'):echo ' active'; endif;?>">
+                       <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/fotos">Eventos</a>
+                    </div>
+                   
+                    <div class="links <?php if($controlerName =='dicas'):echo ' active'; endif;?>">
+                        <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/dicas">Dicas</a>
+                    </div>
+                   
+                    <div class="links <?php if($controlerName =='contato'):echo ' active'; endif;?>">
+                        <a class="fontMenu" href="<?php echo $this->baseUrl(); ?>/contato">Fale conosco</a>
+                    </div>
+                    
+                </div>
+            
+           
+  </div>
+  
+
+  <?php echo $this->layout()->content; ?>
+  
+  
+  
+  <!-- Footer -->
+  <footer id="footer" class="clearfix  second-bg">
+    <div class="padding container_9 ">
+      <div class="footer-set">
+        <div class="block">
+          <h4 class="fontMenuRodape">MENU</h4>
+          <div class="block_content">
+            <ul>
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/index">
+                    Home
+                </a>
+              </li>
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/empresa">
+                    A Empresa
+                </a>
+              </li>
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/produtos">
+                    Serviços
+                </a>
+              </li>
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/produtos">
+                    Eventos
+                </a>
+              </li>
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/dicas">
+                    Dicas
+                </a>
+              </li>
+              <!-- <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/parceiros">
+                    Parceiros
+                </a>
+              </li>  -->
+              
+              <li class="first_item">
+                <a href="<?php echo $this->baseUrl(); ?>/contato">
+                    Fale Conosco
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="block">
+          <h4 class="fontMenuRodape">ACEITAMOS</h4>
+          <div class="block_content">
+            <ul>
+              <li class="item">
+                <?php 
+                $modelPrincipal = new Admin_Model_DbTable_Principal();
+                $sqlPrincipal = $modelPrincipal->select()->where('idPrincipal = 15');
+                $grupo1 = $modelPrincipal->getAdapter()->fetchRow($sqlPrincipal);
+                ?>
+                <img src="<?php echo $this->baseUrl(); ?>/upload/grupo/<?php echo $grupo1['nomeArquivo']; ?>">
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="block">
+          <h4 class="fontMenuRodape">ACESSO</h4>
+          <div class="block_content">
+            <ul>
+              <li>
+                <a href="<?php echo $this->baseUrl(); ?>/admin" target="_blank">
+                    Administrador
+                </a>
+              </li>
+              <li>
+                <a href="http://wemail.sotelas.com.br" target="_blank" >
+                    Webmail
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+       
+       <!-- felipe altera��o nos contatos -->
+        <?php 
+        $modelContato = new Admin_Model_DbTable_Contato();
+        $sql = $modelContato->select();
+        $contato = $modelContato->getAdapter()->fetchAll($sql);
+        
+        ?>
+        
+        <div class="block last">
+          <h4 class="fontMenuRodape">CONTATO</h4>
+          <div class="block_content">          
+          <p>
+          <?php echo $contato[0]['endContato']; ?>
+          <br />
+              <?php echo $contato[0]['cidadeContato']; ?>  
+              <br />
+              Fone: <?php echo $contato[0]['telefone1Contato']; ?>
+              <br />
+              <?php if ($contato[0]['telefone2Contato'] != null) { ?>
+              Fone: <?php echo $contato[0]['telefone2Contato']; ?>
+              <br />
+              <?php } ?>
+              <?php if ($contato[0]['telefone3Contato'] != null) { ?>
+              Fone: <?php echo $contato[0]['telefone3Contato']; ?>
+              <br />
+              <?php } ?>
+              <?php echo $contato[0]['emailContato']; ?>
+              <br />
+          </p>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+    
+        <div class="rodape">
+         <div class="container_9 ">
+            <div class="divLogoRodape">
+                <a href="http://criattus.com.br" target="_blank" title="Criattus Websites e Sistemas Online">
+                    <img style="width: 130px;" alt="logo" src="<?php echo $this->baseUrl(); ?>/layout/site/images/logo-criattus-white.png">
+                </a>
+             </div>
+           
+          </div>
+        </div>
+      
+  </footer>
+</div>
+</body>
+</html>

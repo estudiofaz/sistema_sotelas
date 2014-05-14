@@ -1,0 +1,52 @@
+
+  <div class="category-full-image"> 
+    
+
+    <ul class="category-slider">
+      <li> <img src="<?php echo $this->baseUrl(); ?>/layout/site/media/page-title-bg.jpg" ></li>
+    </ul>
+  </div>
+  <div class="container_9 title-container">
+    <div class="page-title first-bg"> Eventos </div>
+  </div>
+  <section  id="columns" class="container_9 clearfix "> 
+    
+    <!-- Center -->
+    <article id="center_column" class=" grid_12 container">
+      
+      <ul class="products-grid">
+      
+      <?php
+       $k = 1; 
+       foreach ($this->eventos as $cat): 
+ 
+          if ($k == 4) {
+          	$row = 'last';
+          	$k = 0;
+          }else{
+          	$row = 'first';
+          }
+       ?>
+        <li class="item evento <?php echo $row; ?> fadeIn animated">
+            <!-- rel="prettyPhoto[pp_gal]"  --> 
+            <a href="<?php echo $this->baseUrl(); ?>/fotos/view/id/<?php echo $cat['id']; ?>" class="product-image" title="Eventos" > 
+                <img style="width: 100%; height: 315px;"  src="<?php echo $this->baseUrl(); ?>/upload/eventos/<?php echo $cat['nome']; ?>" alt="fotos">
+            </a>
+            <h2 class="product-name"> 
+            <a href="<?php echo $this->baseUrl(); ?>/fotos/view/id/<?php echo $cat['id']; ?>" title="Eventos" > 
+                <b>
+                <?php echo $cat['descricao']; ?>
+                </b> 
+            </a>
+            </h2>
+        </li>
+        <?php
+        $k++;  
+        endforeach; ?>
+
+      </ul>
+
+    </article>
+    
+  </section>
+

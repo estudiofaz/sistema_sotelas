@@ -1,0 +1,82 @@
+
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/tinymce2/js/tinymce/tinymce.min.js"></script>
+
+
+<script>
+tinymce.init({
+    selector: "textarea#elm1",
+    theme: "modern",
+
+    plugins: [
+         "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+         "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+         "save table contextmenu directionality emoticons template paste textcolor"
+   ],
+   content_css: "css/content.css",
+   toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image |  preview  fullpage | forecolor backcolor ", 
+   menu: {  
+   }
+
+ }); 
+</script>
+
+        
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-th-list"></span></div>
+            <div class="pagetitle">
+                <h5>SISTEMA</h5>
+                <h1>Perfil</h1>
+            </div>
+        </div><!--pageheader-->
+        <?php 
+        	echo $this->alert;
+		?>        
+        <div class="maincontent">
+            <div class="maincontentinner">
+            
+            
+			<a href="<?php echo $this->baseUrl(); ?>/admin/perfil/access" class="btn btn-inverse alertinverse" >
+			Editar dados de acesso
+            </a>
+            
+
+            <form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'index'));?>" method="POST" enctype="multipart/form-data">
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Editar Perfil</h4>
+                <div class="widgetcontent nopadding">
+					
+					<p>
+						<label>Empresa</label>
+						<span class="field">
+							<input type="text" name="nomeLogin" id="firstname2" class="input-xxlarge" value="<?php echo $this->cliente['nomeLogin']; ?>" />
+						</span>
+					</p>
+
+					<p>
+						<label>Nome Responsável</label>
+						<span class="field">
+							<input type="text" name="responsavelLogin" id="firstname2" class="input-xxlarge"  value="<?php echo $this->cliente['responsavelLogin']; ?>" />
+						</span>
+					</p>
+					
+					<p>
+						<label>Telefone</label>
+						<span class="field">
+							<input type="text" name="telefoneLogin" id="firstname2" class="input-xxlarge"  value="<?php echo $this->cliente['telefoneLogin']; ?>" />
+						</span>
+					</p>
+                	
+                	<p class="stdformbutton">
+                		<button class="btn btn-primary" name="up" value="Confirmar" type="submit">Confirmar</button>
+                	</p>
+
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+                    
+			</form>
+                    

@@ -1,0 +1,119 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/isotope.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/modernizr.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.colorbox-min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.slimscroll.js"></script>
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        
+        //Replaces data-rel attribute to rel.
+        //We use data-rel because of w3c validation issue
+        jQuery('a[data-rel]').each(function() {
+            jQuery(this).attr('rel', jQuery(this).data('rel'));
+        });
+        
+        jQuery("#medialist a").colorbox();
+        
+    });
+    jQuery(window).load(function(){
+        jQuery('#medialist').isotope({
+            itemSelector : 'li',
+            layoutMode : 'fitRows'
+        });
+        
+        // Media Filter
+        jQuery('#mediafilter a').click(function(){
+	    
+            var filter = (jQuery(this).attr('href') != 'all')? '.'+jQuery(this).attr('href') : '*';
+            jQuery('#medialist').isotope({ filter: filter });
+	    
+            jQuery('#mediafilter li').removeClass('current');
+            jQuery(this).parent().addClass('current');
+	    
+            return false;
+        });
+    });
+</script>
+
+		<div class="pageheader">
+            <div class="pageicon"><span class=" iconfa-barcode"></span></div>
+            <div class="pagetitle">
+                <h5>SERVIÇOS</h5>
+                <h1>Serviços</h1>
+            </div>
+        </div><!--pageheader-->
+        
+       <?php echo $this->alert; ?>
+        
+        <div class="maincontent">
+            <div class="maincontentinner">       
+			
+			<h4 class="widgettitle">
+			Categorias
+			</h4>
+            	<table class="table table-bordered responsive">
+                    <thead>
+                        <tr>
+	                        <th>&nbsp;</th>
+                            <th>Categoria</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<?php
+                    	foreach ($this->categorias as $categoria): 
+                    	?>
+                        <tr>
+                        	<td class="centeralign">
+                        		<?php echo $categoria['id']; ?>
+                        	</td>
+                            
+                            <td>
+                            	<?php
+                            		echo $categoria['categoriaServico'];
+                            	?>
+                            </td>
+
+                            <td class="centeralign">
+                            	<a href="<?php echo $this->baseUrl(); ?>/admin/servicos/view/id/<?php echo $categoria['id']; ?>" class="okrow" title="Adicionar Serviços"><span class=" icon-th-list"></span></a>
+                            </td>
+
+                            
+                        </tr>
+                    <?php endforeach; ?>
+                        
+                    </tbody>
+                </table>
+              
+                
+                <div class="divider15"></div>
+                
+              
+ 
+            
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+                                    
+        //Replaces data-rel attribute to rel.
+        //We use data-rel because of w3c validation issue
+        jQuery('a[data-rel]').each(function() {
+            jQuery(this).attr('rel', jQuery(this).data('rel'));
+        });
+        
+        // tooltip sample
+	if(jQuery('.tooltipsample').length > 0)
+		jQuery('.tooltipsample').tooltip({selector: "a[rel=tooltip]"});
+		
+	jQuery('.popoversample').popover({selector: 'a[rel=popover]', trigger: 'hover'});
+        
+    });
+</script>

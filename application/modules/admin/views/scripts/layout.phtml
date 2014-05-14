@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin :: Só telas</title>
+<link rel="shortcut icon" href="<?php echo $this->baseUrl(); ?>/layout/favicon.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/style.default.css" type="text/css" />
+
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/responsive-tables.css">
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-migrate-1.1.1.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery-ui-1.10.3.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/modernizr.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.uniform.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/flot/jquery.flot.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/flot/jquery.flot.resize.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/responsive-tables.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/custom.js"></script>
+<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/excanvas.min.js"></script><![endif]-->
+
+</head>
+
+
+<body>
+
+<div id="mainwrapper" class="mainwrapper">
+    
+    <div class="header">
+        <div class="logo">
+            <a href="<?php echo $this->baseUrl(); ?>/admin/index">
+            	<!--  <img style="width:500px;" src="<?php echo $this->baseUrl(); ?>/layout/site/img/logomarca.png" alt="Aguia telas" />
+                --> 
+            </a>
+            Logo
+        </div>
+        <div class="headerinner">
+        
+            <ul class="headmenu">
+                
+                <li class="right">
+                    <div class="userloggedinfo">
+                        <div class="userinfo">
+                            <h5><?php echo $this->read->nomeLogin; ?><small>- <?php echo $this->read->responsavelLogin; ?></small></h5>
+                            <ul>
+                                <li><a href="<?php echo $this->baseUrl(); ?>/admin/perfil">Editar Perfil</a></li>
+                                <!-- <li><a href="">Adicionar Usuário</a></li> -->
+                                <li><a href="<?php echo $this->baseUrl(); ?>/default/login/logout">Sair</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul><!--headmenu-->
+            
+            
+            
+        </div>
+    </div>
+    
+<?php 
+
+		$a = null;
+		$block = null;
+		$block1 = null;
+		$block2 = null;
+		$block3 = null;
+		$block4 = null;
+		$a1 = null;
+		$a2 = null;
+		$a3 = null;
+		$a4 = null;
+		$a5 = null;
+		$a6 = null;
+		$a7 = null;
+		$a8 = null;
+		$a9 = null;
+		$a10 = null;
+		$a11 = null;
+		$a12 = null;
+		$a13 = null;
+		$a14 = null;
+		$a15 = null;
+		$a16 = null;
+		$a17 = null;
+		
+		$a22 = null;
+		$a23 = null;
+		$a24 = null;
+		$a25 = null;
+
+
+$getUrl = Zend_Controller_Front::getInstance()->getRequest()->getParams();
+$controller = $getUrl['controller'];
+$action = $getUrl['action'];
+
+$op = $controller;
+$active = null;
+
+switch ($op):
+
+	case 'index':
+		$a = 'active';
+		break;
+
+	case 'depoimentos':
+		$block = "style='display: block'"; //Block Website;
+		$a1 = 'active';	// Website
+		$a2 = 'active';
+		break;
+		
+		
+	case 'sliders':
+		$block = "style='display: block'"; // Block Website;
+		$block1 = "style='display: block'"; // Block Principal
+		$a1 = 'active';	// Website
+		$a3 = 'active';
+		break;
+		
+	case 'gruposliders':
+		$block = "style='display: block'"; // Block Website;
+		$block1 = "style='display: block'"; // Block Principal
+		$a1 = 'active';	// Website
+		$a4 = 'active';
+		break;
+		
+	case 'grupoprimeiro':
+		$block = "style='display: block'"; // Block Website;
+		$block1 = "style='display: block'"; // Block Principal
+		$a1 = 'active';	// Website
+		$a5 = 'active';
+		break;
+
+	case 'gruposegundo':
+		$block = "style='display: block'"; // Block Website;
+		$block1 = "style='display: block'"; // Block Principal
+		$a1 = 'active';	// Website
+		$a6 = 'active';
+		break;
+		
+	case 'grupoterceiro':
+		$block = "style='display: block'"; // Block Website;
+		$block1 = "style='display: block'"; // Block Principal
+		$a1 = 'active';	// Website
+		$a7 = 'active';
+		break;
+				
+	case 'parceiros':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a8 = 'active';
+		break;
+		
+	case 'resumoempresa':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a9 = 'active';
+		break;
+		
+	case 'empresa':
+		$a = null;
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a10 = 'active';
+		break;
+		
+	case 'categorias':
+		$block = "style='display: block'"; // Block Website;
+		$block2 = "style='display: block'"; // Block Serviços
+		$a1 = 'active';	// Website
+		$a11 = 'active';
+		break;
+		
+	case 'produtos':
+		$block = "style='display: block'"; // Block Website;
+		$block2 = "style='display: block'"; // Block Serviços
+		$a1 = 'active';	// Website
+		$a12 = 'active';
+		break;
+		
+	case 'categoriaportfolio':
+		$block = "style='display: block'"; // Block Website;
+		$block3 = "style='display: block'"; // Block Galeria de Fotos
+		$a1 = 'active';	// Website
+		$a13 = 'active';
+		break;
+		
+	case 'portfolio':
+		$block = "style='display: block'"; // Block Website;
+		$block3 = "style='display: block'";  // Block Galeria de Fotos
+		$a1 = 'active';	// Website
+		$a14 = 'active';
+		break;
+		
+	case 'dicas':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a15 = 'active';
+		break;
+		
+	case 'contato':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a16 = 'active';
+		break;
+		
+	case 'imagens':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a17 = 'active';
+		break;
+	case 'telefone':
+	    $block = "style='display: block'"; // Block Website;
+	    $a1 = 'active';	// Website
+		$a19 = 'active';
+		break;
+	case 'mensagem':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a18 = 'active';
+		break;
+	case 'imagemcentral':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a20 = 'active';
+		break;
+	case 'imagemfinal':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a21 = 'active';
+		break;
+	case 'eventos':
+		$block = "style='display: block'"; // Block Website;
+		$block4 = "style='display: block'"; // Block Serviços
+		$a1 = 'active';	// Website
+		$a22 = 'active';
+		break;
+	case 'fotos':
+		$block = "style='display: block'"; // Block Website;
+		$block4 = "style='display: block'"; // Block Serviços
+		$a1 = 'active';	// Website
+		$a23 = 'active';
+		break;
+	case 'janela':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a24 = 'active';
+		break;
+	case 'pdf':
+		$block = "style='display: block'"; // Block Website;
+		$a1 = 'active';	// Website
+		$a25 = 'active';
+		break;
+		
+	default:
+		break;
+endswitch;
+?>    
+    
+    <div class="leftpanel">
+        
+        <div class="leftmenu">        
+            <ul class="nav nav-tabs nav-stacked">
+            	<li class="nav-header">Navegação</li>
+            	
+            	<li class="<?php echo $a; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/index"><span class="iconfa-laptop"></span> Home</a></li>
+            	
+                <li class=" <?php echo $a1; ?> dropdown"><a href=""><span class="iconfa-laptop"></span> Website</a>
+                	
+                	<ul <?php echo $block; ?>>
+                		
+                    	<li class="dropdown"><a href="">Principal</a>
+                    	
+	                        <ul <?php echo $block1; ?>>
+	                            
+	                             <li class="<?php echo $a3; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/sliders">Sliders</a></li>
+	                            
+	                           <!-- <li class="<?php echo $a5; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/grupoprimeiro">Grupo de Imagens 01</a></li>
+	                            
+	                            <li class="<?php echo $a6; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/gruposegundo">Grupo de Imagens 02</a></li> -->
+	                            
+	                            <li class="<?php echo $a7; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/grupoterceiro">Formas de Pagamento</a></li>
+	                            
+	                        </ul>
+                     	</li>
+                     	
+                     	<li class="<?php echo $a10; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/empresa">Empresa</a></li>
+                     	
+                     	
+	                    <li class="dropdown"><a href="">Serviços</a>
+	                     	<ul <?php echo $block2; ?>>
+	                     		<li class="<?php echo $a11; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/categorias">Categorias</a></li>
+	                     		<li class="<?php echo $a12; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/produtos">Serviços</a></li>
+	                     	</ul>
+	                    </li>
+	                     
+	                   <li class="<?php echo $a15; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/dicas">Dicas</a></li>
+	                   
+	                     
+	                    <!--  <li class="<?php echo $a8; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/parceiros">Parceiros</a></li> -->
+	                     <li class="dropdown"><a href="">Eventos</a>
+	                     	<ul <?php echo $block4; ?> >
+	                     		<li class="<?php echo $a22; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/eventos">Álbums</a></li>
+	                     		<li class="<?php echo $a23; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/fotos">Fotos</a></li>
+	                     	</ul>
+	                    </li>
+	                     <li class="<?php echo $a19; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/telefone">Imagem Inicial</a></li>
+	                     <li class="<?php echo $a20; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/imagemcentral">Imagem Central</a></li>
+	                     <li class="<?php echo $a21; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/imagemfinal">Imagem Final</a></li>
+	                     <li class="<?php echo $a24; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/janela">Janela</a></li>
+	                     <li class="<?php echo $a25; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/pdf">PDF</a></li>
+	                    <!--   <li class="dropdown"><a href="">Portfólio</a>
+	                     	<ul <?php echo $block3; ?>>
+	                     		<li class="<?php echo $a13; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/categoriaportfolio">Categoria</a></li>
+	                     		<li class="<?php echo $a14; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/portfolio">Portfolio</a></li>
+	                     	</ul>
+	                    </li> -->
+                     	
+                     	<li class="<?php echo $a16; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/contato">Contato</a></li>
+                     	
+                     <!-- 	<li class="<?php echo $a17; ?>"><a href="<?php echo $this->baseUrl(); ?>/admin/imagens">Imagens</a></li>  -->
+                     	
+                    </ul>
+                    
+                    
+                </li>
+
+            </ul>
+            
+            <p id="criattus">
+		    	<a href="http://www.criattus.com.br" target="_blank" title="Desenvolvido por">
+		    		<img style="width:130px;" alt="Criattus" src="<?php echo $this->baseUrl(); ?>/layout/adm/images/logo-criattus-white.png">
+				</a>
+            </p>
+            
+        </div><!--leftmenu-->
+        
+    </div><!-- leftpanel -->
+    
+    <div class="rightpanel">
+    
+        <ul class="breadcrumbs">
+            <li><a href="#"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li>Home</li>
+        </ul>
+    
+		<?php echo $this->layout()->content; ?>
+		
+		<div class="footer">
+       </div><!--footer-->
+	</div>
+
+    
+</div><!--mainwrapper-->
+
+
+</body>
+</html>

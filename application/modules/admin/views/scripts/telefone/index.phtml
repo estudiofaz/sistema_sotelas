@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+        
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-laptop"></span></div>
+            <div class="pagetitle">
+                <h5>PRINCIPAL</h5>
+                <h1>Telefone</h1>
+            </div>
+              
+        </div><!--pageheader-->
+        <?php if($this->salvo == true){?> 
+            <div class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">x</button>
+                
+                Suas alterações foram efetuadas com sucesso!
+            </div>   
+            <?php }?>
+        <?php 
+        	echo $this->alert;
+		?>        
+        <div class="maincontent">
+            <div class="maincontentinner">
+            
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Telefone</h4>
+                <div class="widgetcontent nopadding">
+                	
+                	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url();?>/index" method="POST" enctype="multipart/form-data">
+                	
+							<p>
+							<div class="par">
+								<label>Imagem</label>
+							    <span class="field">
+							    <div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="input-append">
+								<div class="uneditable-input span3">
+								    <i class="iconfa-file fileupload-exists"></i>
+								    <span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-file"><span class="fileupload-new">Selecionar arquivo</span>
+								<span class="fileupload-exists">Alterar</span>
+								<input type="file" name="arquivo1" /></span>
+								<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remover</a>
+								</div>
+							    </div>
+							    	<img style="width:504px; height:155px;" alt="" src="<?php echo $this->baseUrl(); ?>/upload/telefone/<?php echo $this->telefone['nomeArquivo']; ?>">
+							    </span>
+							</div>
+							</p>
+							                       
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary" name="up1" value="Salvar" type="submit">Salvar</button>
+                            </p>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+            
+            
+    </div>
+</div>

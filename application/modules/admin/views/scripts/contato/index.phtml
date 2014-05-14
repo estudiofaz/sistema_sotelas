@@ -1,0 +1,63 @@
+
+
+		<div class="pageheader">
+            <div class="pageicon"><span class="iconfa-envelope"></span></div>
+            <div class="pagetitle">
+                <h5>CONTATO</h5>
+                <h1>Contato</h1>
+            </div>
+        </div><!--pageheader-->
+        
+       <?php echo $this->alert; ?>
+        
+        <div class="maincontent">
+            <div class="maincontentinner">            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Contato</h4>
+                <div class="widgetcontent nopadding">
+                	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'index'));?>" method="POST" enctype="multipart/form-data">
+                            <p>
+                                <label>Endereço</label>
+                                <span class="field"><input type="text" name="endContato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['endContato']; ?>" /></span>
+                            </p>
+
+                            <p>
+                                <label>Cidade / UF</label>
+                                <span class="field"><input type="text" name="cidadeContato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['cidadeContato']; ?>" /></span>
+                            </p>
+                            
+                            <p>
+                                <label>Telefone</label>
+                                <span class="field"><input type="text" name="telefone1Contato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['telefone1Contato']; ?>" /></span>
+                            </p>                                
+
+                            <p>
+                                <label>Telefone</label>
+                                <span class="field"><input type="text" name="telefone2Contato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['telefone2Contato']; ?>" /></span>
+                            </p>                                
+
+                            <p>
+                                <label>Telefone</label>
+                                <span class="field"><input type="text" name="telefone3Contato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['telefone3Contato']; ?>" /></span>
+                            </p>
+
+                            <p>
+                                <label>E-mail</label>
+                                <span class="field"><input type="text" name="emailContato" id="firstname2" class="input-xxlarge" value="<?php echo $this->contato['emailContato']; ?>" /></span>
+                            </p>
+                            
+                            <p>
+                                <label>Mapa (Google Maps)</label>
+                                <span class="field">
+                                <textarea rows="5" class="input-xxlarge" name="mapaContato" ><?php echo $this->contato['mapaContato']; ?></textarea>
+                                </span>
+                            </p>                            
+                                                                                                        
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary" name="up" value="Salvar" type="submit">Salvar</button>
+                                
+                            </p>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+            

@@ -1,0 +1,192 @@
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-fileupload.min.css" type="text/css" />
+<link rel="stylesheet" href="<?php echo $this->baseUrl(); ?>/layout/adm/css/bootstrap-timepicker.min.css" type="text/css" />
+        <script type="text/javascript" src="<?php echo $this->baseUrl(); ?>/layout/adm/js/bootstrap-fileupload.min.js"></script>
+        
+        <div class="pageheader">
+            <div class="pageicon"><span class="iconfa-laptop"></span></div>
+            <div class="pagetitle">
+                <h5>PRINCIPAL</h5>
+                <h1>Grupo de Imagens</h1>
+            </div>
+        </div><!--pageheader-->
+        <?php 
+        	echo $this->alert;
+		?>        
+        <div class="maincontent">
+            <div class="maincontentinner">
+
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Grupo de imagens - PRIMEIRO</h4>
+                <div class="widgetcontent nopadding">
+                	
+                	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'group1'));?>" method="POST" enctype="multipart/form-data">
+                	
+                			<p>
+                				<label>Título</label>
+                				<span class="field"><input type="text" name="titulo1" id="firstname2" class="input-xxlarge" value="<?php echo $this->grupo1['tituloPrincipal']; ?>" /></span>
+                			</p>
+							<p>
+							<div class="par">
+								<label>Imagem</label>
+							    <span class="field">
+							    <div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="input-append">
+								<div class="uneditable-input span3">
+								    <i class="iconfa-file fileupload-exists"></i>
+								    <span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-file"><span class="fileupload-new">Selecionar arquivo</span>
+								<span class="fileupload-exists">Alterar</span>
+								<input type="file" name="arquivo1" /></span>
+								<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remover</a>
+								</div>
+							    </div>
+							    	<img style="width:250px; height:100px;" alt="" src="<?php echo $this->baseUrl(); ?>/upload/grupo/<?php echo $this->grupo1['nomeArquivo']; ?>">
+							    </span>
+							</div>
+							</p>
+							                       
+                            <!-- linkPrincipal -->
+                            <p>
+                                <label>Link</label>
+                                <span class="field">
+                                
+                                	<select id="linkPagina" name="linkPrincipal1" required>
+                    					<option value='#' >-- Selecione um Link --</option>
+                    					
+                                		<option value="index"     <?php echo ($this->grupo1['linkPrincipal'] == 'index' ? 'selected': ''); ?>> Principal </option>
+                                		<option value="empresa"   <?php echo ($this->grupo1['linkPrincipal'] == 'empreas' ? 'selected': ''); ?>> Empresa </option>
+                                		<option value="produtos"  <?php echo ($this->grupo1['linkPrincipal'] == 'produtos' ? 'selected': ''); ?>> Produtos </option>
+                                		<option value="dicas"     <?php echo ($this->grupo1['linkPrincipal'] == 'dicas' ? 'selected': ''); ?>> Dicas </option>
+                                		<option value="parceiros" <?php echo ($this->grupo1['linkPrincipal'] == 'parceiros' ? 'selected': ''); ?>> Parceiros </option>
+                                		<option value="portfolio" <?php echo ($this->grupo1['linkPrincipal'] == 'portfolio' ? 'selected': ''); ?>> Portfolio </option>
+                                		<option value="contato"   <?php echo ($this->grupo1['linkPrincipal'] == 'contato' ? 'selected': ''); ?>> Fale Conosco </option>
+                                		                                		
+                                	</select>
+                                </span>
+                            </p>
+							                       
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary" name="up1" value="Salvar" type="submit">Salvar</button>
+                            </p>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+            
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Grupo de imagens - SEGUNDO</h4>
+                <div class="widgetcontent nopadding">
+                	<form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'group2'));?>" method="POST" enctype="multipart/form-data">
+                            <p>
+                                <label>Título</label>
+                                <span class="field"><input type="text" name="titulo2" id="firstname2" class="input-xxlarge" value="<?php echo $this->grupo2['tituloPrincipal']; ?>" /></span>
+                            </p>
+							<p>            
+							<div class="par">
+							    <label>Imagem</label>
+							    <span class="field">
+							    <div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="input-append">
+								<div class="uneditable-input span3">
+								    <i class="iconfa-file fileupload-exists"></i>
+								    <span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-file"><span class="fileupload-new">Selecionar arquivo</span>
+								<span class="fileupload-exists">Alterar</span>
+								<input type="file" name="arquivo2" /></span>
+								<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remover</a>
+								</div>
+							    </div>
+							    	<img style="width:250px; height:100px;" alt="" src="<?php echo $this->baseUrl(); ?>/upload/grupo/<?php echo $this->grupo2['nomeArquivo']; ?>">
+							    </span>
+							</div>
+							</p>
+                                                        
+                            <!-- linkPrincipal -->
+                            <p>
+                                <label>Link</label>
+                                <span class="field">
+                                
+                                	<select id="linkPagina" name="linkPrincipal2" required>
+                    					<option value='#' >-- Selecione um Link --</option>
+                    					
+                                		<option value="index"     <?php echo ($this->grupo2['linkPrincipal'] == 'index' ? 'selected': ''); ?>> Principal </option>
+                                		<option value="empresa"   <?php echo ($this->grupo2['linkPrincipal'] == 'empreas' ? 'selected': ''); ?>> Empresa </option>
+                                		<option value="produtos"  <?php echo ($this->grupo2['linkPrincipal'] == 'produtos' ? 'selected': ''); ?>> Produtos </option>
+                                		<option value="dicas"     <?php echo ($this->grupo2['linkPrincipal'] == 'dicas' ? 'selected': ''); ?>> Dicas </option>
+                                		<option value="parceiros" <?php echo ($this->grupo2['linkPrincipal'] == 'parceiros' ? 'selected': ''); ?>> Parceiros </option>
+                                		<option value="portfolio" <?php echo ($this->grupo2['linkPrincipal'] == 'portfolio' ? 'selected': ''); ?>> Portfolio </option>
+                                		<option value="contato"   <?php echo ($this->grupo2['linkPrincipal'] == 'contato' ? 'selected': ''); ?>> Fale Conosco </option>
+                                	</select>
+                                </span>
+                            </p>
+                                                            
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary" name="up2" value="Salvar" type="submit">Salvar</button>
+                            </p>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+            
+            
+            <div class="widgetbox box-inverse">
+                <h4 class="widgettitle">Grupo de imagens - TERCEIRO</h4>
+                <div class="widgetcontent nopadding">
+                    <form name="uploadfile" class="stdform stdform2" action="<?php echo $this->url(array('action'=>'group3'));?>" method="POST" enctype="multipart/form-data">
+                            <p>
+                                <label>Título</label>
+                                <span class="field"><input type="text" name="titulo3" id="firstname2" class="input-xxlarge" value="<?php echo $this->grupo3['tituloPrincipal']; ?>" /></span>
+                            </p>
+							<p>            
+							<div class="par">
+							    <label>Imagem</label>
+							    <span class="field">
+							    <div class="fileupload fileupload-new" data-provides="fileupload">
+								<div class="input-append">
+								<div class="uneditable-input span3">
+								    <i class="iconfa-file fileupload-exists"></i>
+								    <span class="fileupload-preview"></span>
+								</div>
+								<span class="btn btn-file"><span class="fileupload-new">Selecionar arquivo</span>
+								<span class="fileupload-exists">Alterar</span>
+								<input type="file" name="arquivo3" /></span>
+								<a href="#" class="btn fileupload-exists" data-dismiss="fileupload">Remover</a>
+								</div>
+							    </div>
+							    	<img style="width:250px; height:100px;" alt="" src="<?php echo $this->baseUrl(); ?>/upload/grupo/<?php echo $this->grupo3['nomeArquivo']; ?>">
+							    </span>
+							</div>
+							</p>
+							
+                            <!-- linkPrincipal -->
+                            <p>
+                                <label>Link</label>
+                                <span class="field">
+                                
+                                	<select id="linkPagina" name="linkPrincipal3" required>
+                    					<option value='#' >-- Selecione um Link --</option>
+                    					
+                                		<option value="index"     <?php echo ($this->grupo3['linkPrincipal'] == 'index' ? 'selected': ''); ?>> Principal </option>
+                                		<option value="empresa"   <?php echo ($this->grupo3['linkPrincipal'] == 'empreas' ? 'selected': ''); ?>> Empresa </option>
+                                		<option value="produtos"  <?php echo ($this->grupo3['linkPrincipal'] == 'produtos' ? 'selected': ''); ?>> Produtos </option>
+                                		<option value="dicas"     <?php echo ($this->grupo3['linkPrincipal'] == 'dicas' ? 'selected': ''); ?>> Dicas </option>
+                                		<option value="parceiros" <?php echo ($this->grupo3['linkPrincipal'] == 'parceiros' ? 'selected': ''); ?>> Parceiros </option>
+                                		<option value="portfolio" <?php echo ($this->grupo3['linkPrincipal'] == 'portfolio' ? 'selected': ''); ?>> Portfolio </option>
+                                		<option value="contato"   <?php echo ($this->grupo3['linkPrincipal'] == 'contato' ? 'selected': ''); ?>> Fale Conosco </option>                              		
+                                	</select>
+                                	
+                                </span>
+                            </p>
+							
+                            <p class="stdformbutton">
+                                <button class="btn btn-primary" name="up3" value="Salvar" type="submit">Salvar</button>
+                            </p>
+                    </form>
+                </div><!--widgetcontent-->
+            </div><!--widget-->
+            
+            
+    </div>
+</div>
