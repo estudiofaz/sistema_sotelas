@@ -17,6 +17,7 @@ class Default_LoginController extends Zend_Controller_Action
 		$usuarioLogin = $this->getRequest()->getPost('usuarioLogin');
 		$senhaLogin = $this->getRequest()->getPost('senhaLogin');
 		
+		
 			
 		//Verifica se o formulário foi postado
 		if($this->getRequest()->isPost()){
@@ -35,7 +36,7 @@ class Default_LoginController extends Zend_Controller_Action
 										->setIdentity($usuarioLogin)			//Qual usuario
 										->setCredential($senhaLogin)			//Qual senha
 										->authenticate();
-
+                
 				if($autenticacao->isValid()){
 
 					// Instanciando auth atual
@@ -52,9 +53,25 @@ class Default_LoginController extends Zend_Controller_Action
 					//$perfil = $read->perfil;
 
 					//if ($perfil === 'admin'){
-
+                    
 					if($read){
-						$this->_redirect("/admin/index/");
+						      
+					    $loginModel = new Default_Model_DbTable_Login();
+					    $where = $loginModel->getAdapter()->quoteInto('usuarioLogin = ?', $usuarioLogin);
+					    
+					    $dados = $loginModel->select()->where($where);
+					    $select =  $loginModel->getAdapter()->fetchRow($dados);
+					    
+					    if($select['idLogin']==1){
+					    
+					       $this->_redirect("/admin/index/");
+					    
+					    }elseif($select['idLogin'] == 2){
+					    	
+					        $this->_redirect("/sistema/index/");
+					    }
+						
+					
 					}else{
 						$this->_redirect("/default/login");
 					}
