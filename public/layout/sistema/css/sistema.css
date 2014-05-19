@@ -2,3 +2,32 @@
 	
 	margin-bottom: 10px;
 }
+
+.inputMedio{
+	
+	margin-bottom: 10px;
+	width: 300px
+}
+
+.inputMenor{
+	
+	
+	margin-bottom: 10px;
+	width: 70px;
+	
+	
+}
+
+.positon{
+	
+	
+	margin-left: 330px;
+	margin-top: -48px;
+}
+
+.botao{
+	
+	
+	margin-left: 300px;
+	margin-top: -300px;
+}
