@@ -6,7 +6,7 @@
 .inputMedio{
 	
 	margin-bottom: 10px;
-	width: 300px
+	width: 150px
 }
 
 .inputMenor{
@@ -21,13 +21,59 @@
 .positon{
 	
 	
-	margin-left: 330px;
+	margin-left: 160px;
 	margin-top: -48px;
 }
 
 .botao{
 	
 	
-	margin-left: 300px;
+	margin-left: 150px;
 	margin-top: -300px;
 }
+
+.cloneCor{
+	
+	margin-left: 235px;
+	margin-top: -50px;
+}
+.cloneQuantidade{
+	margin-left: 390px;
+	margin-top: -47px;
+	
+	
+}
+
+.cloneAltura{
+	
+	margin-left: 465px;
+	margin-top: -50px;
+	
+}
+
+.cloneLargura{
+	
+	margin-left: 540px;
+	margin-top: -50px;
+	
+}
+.cloneValorTotal{
+	margin-left: 615px;
+	margin-top: -50px;
+	
+}
+.remover{
+	margin-left: 690px;
+	margin-top: -80px;
+	
+}
+
+
+
+
+
+
+
+
+
+
